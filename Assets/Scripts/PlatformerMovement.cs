@@ -94,6 +94,7 @@ public class PlatformerMovement : MonoBehaviour
         rb.linearVelocity = velocity;
         
         // Write movement animation code here. (Suggestion: send your current velocity into the Animator for both the x- and y-axis.)
+        animator.SetFloat("Move", velocity.magnitude);
     }
 
     private bool IsGrounded()
@@ -166,12 +167,14 @@ public class PlatformerMovement : MonoBehaviour
         if (context.started && controlEnabled)
         {
             Debug.Log("Jump!");
+            animator.SetBool("Jump", true);
             jumpInput = true;
             jumpReleased = false;
         }
 
         if (context.canceled && controlEnabled)
         {
+            animator.SetBool("Jump", false);
             jumpReleased = true;
             jumpInput = false;
         }
