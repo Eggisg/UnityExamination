@@ -8,8 +8,10 @@ public class Collectible : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        fishManager.fishCollected++;
+        
         audioSource.Play();
+        
         Destroy(this.gameObject);
+        fishManager.fishCollected++;
     }
 }
