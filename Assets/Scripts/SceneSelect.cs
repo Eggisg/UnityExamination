@@ -8,4 +8,14 @@ public class SceneSelect : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void LoadLoreScene()
+    {
+        SceneManager.LoadScene("Lore");
+    }
+    
+    public void LoadMenuScene()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
